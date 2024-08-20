@@ -1,0 +1,36 @@
+calls = 0
+
+
+def count_calls():
+    global calls
+    calls = calls + 1
+
+
+def string_info(string):
+    len_1 = len(string)
+    a = string.upper()
+    b = string.lower()
+    count_calls()
+    return len_1, a, b
+
+
+def is_contains(string, list_to_search):
+    string_for_check = string.lower()
+    list_for_check = []
+
+    for a in list_to_search:
+        a = a.lower()
+        list_for_check.append(a)
+
+    if string_for_check in list_for_check:
+        return True
+    else:
+        return False
+    count_calls()
+
+
+print(string_info('Capybara'))
+print(string_info('Armageddon'))
+print(is_contains('Urban', ['ban', 'BaNaN', 'urBAN'])) # Urban ~ urBAN
+print(is_contains('cycle', ['recycling', 'cyclic'])) # No matches
+print(calls)
