@@ -17,16 +17,18 @@ def string_info(string):
 def is_contains(string, list_to_search):
     string_for_check = string.lower()
     list_for_check = []
-
     for a in list_to_search:
         a = a.lower()
         list_for_check.append(a)
-
     if string_for_check in list_for_check:
+        count_calls()
         return True
     else:
+        count_calls()
         return False
-    count_calls()
+    
+
+
 
 
 print(string_info('Capybara'))
